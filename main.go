@@ -118,6 +118,7 @@ func NewWorker() (*Worker, error) {
 
 func main() {
 	forever := make(chan bool)
+	fmt.Println("service start")
 	_, err := NewWorker()
 	if err != nil {
 		fmt.Println(err)
