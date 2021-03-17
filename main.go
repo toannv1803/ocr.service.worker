@@ -103,16 +103,16 @@ func NewWorker() (*Worker, error) {
 	if err != nil {
 		return nil, err
 	}
-	var consumeProcessRequest = module.Consume{
+	var consumeTaskImage = module.Consume{
 		q.imageTaskQueue,
 		"",
 		false,
 		false,
 		false,
 		false,
-		10,
+		1,
 	}
-	q.rabbitmq.Consume(consumeProcessRequest, q.HandleTask)
+	q.rabbitmq.Consume(consumeTaskImage, q.HandleTask)
 	return &q, err
 }
 
