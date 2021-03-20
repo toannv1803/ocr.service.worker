@@ -24,7 +24,7 @@ type Worker struct {
 
 func (q *Worker) CallAICore(image model.Image) ([]byte, error) {
 	strImage, _ := json.Marshal(image)
-	req, err := http.NewRequest(http.MethodGet, q.aiUrl, bytes.NewReader(strImage))
+	req, err := http.NewRequest(http.MethodPost, q.aiUrl, bytes.NewReader(strImage))
 	if err != nil {
 		return nil, err
 	}
