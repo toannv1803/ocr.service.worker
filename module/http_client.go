@@ -17,7 +17,7 @@ func CreateClient() *http.Client {
 		MaxIdleConnsPerHost: 100,
 	}
 	return &http.Client{
-		Timeout:   40 * time.Second,
+		Timeout:   66 * time.Second,
 		Transport: netTransport,
 	}
 }
